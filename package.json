@@ -1,12 +1,22 @@
 {
-  "name": "projects",
+  "name": "learning-react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "workspaces": [
+    "projects/*"
+  ],
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Judá Carrillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JudaCarrillo/learning-react/issues"
+  },
+  "homepage": "https://github.com/JudaCarrillo/learning-react#readme",
+  "devDependencies": {
+    "standard": "17.1.0"
+  }
 }
