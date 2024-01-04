@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/JudaCarrillo/learning-react#readme",
   "devDependencies": {
-    "standard": "17.1.0"
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
