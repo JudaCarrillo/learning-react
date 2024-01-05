@@ -6,15 +6,18 @@ export const FollowMouse = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const text = enabled ? "Desactivar" : "Activar";
+  const buttonClassName = enabled
+    ? "mf-mouseFollowerDiv is-active"
+    : "mf-mouseFollowerDiv";
 
   const handleClick = () => {
     setEnabled(!enabled);
   };
 
+  // pointer move
   useEffect(() => {
     const handleMove = (event) => {
       const { clientX, clientY } = event;
-      position;
       setPosition({ x: clientX, y: clientY });
     };
 
@@ -22,16 +25,26 @@ export const FollowMouse = () => {
       window.addEventListener("pointermove", handleMove);
     }
 
+    // cleanup method
     return () => {
-      setPosition({ x: 0, y: 0 });
       window.removeEventListener("pointermove", handleMove);
+    };
+  }, [enabled]);
+
+  // change body class name
+  useEffect(() => {
+    document.body.classList.toggle("no-cursor", enabled);
+
+    return () => {
+      console.log("cleanup");
+      document.body.classList.remove("no-cursor");
     };
   }, [enabled]);
 
   return (
     <>
       <div
-        className="mf-mouseFollowerDiv"
+        className={buttonClassName}
         style={{
           transform: `translate(${position.x}px, ${position.y}px)`,
         }}

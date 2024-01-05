@@ -1,4 +1,4 @@
-.mf-mouseFollowerDiv {
+.mf-mouseFollowerDiv.is-active {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid #fff;
@@ -9,4 +9,12 @@
   top: -20px;
   width: 40px;
   height: 40px;
+}
+
+.mf-mouseFollowerDiv {
+  display: block;
+}
+
+body.no-cursor {
+  cursor: none;
 }
