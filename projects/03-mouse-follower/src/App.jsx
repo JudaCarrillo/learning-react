@@ -1,7 +1,12 @@
 import "./App.css";
+import { FollowMouse } from "./components";
 
 function App() {
-  return <h3>Proyecto 3</h3>;
+  return (
+    <main>
+      <FollowMouse />
+    </main>
+  );
 }
 
 export default App;
